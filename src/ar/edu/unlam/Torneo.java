@@ -10,11 +10,11 @@ import java.util.TreeSet;
 public class Torneo {
 
 	private Set <Miembro> miembros;
-	private Map <Partido, Partido >partidos;
+	private Map<String, Partido> partidos;
 	
 	public Torneo() {
 		this.miembros = new TreeSet<Miembro>();
-		this.partidos = new HashMap<Partido, Partido>();
+		this.partidos = new HashMap<String, Partido>();
 		
 	}
 
@@ -26,11 +26,11 @@ public class Torneo {
 		this.miembros = miembros;
 	}
 
-	protected Map<Partido, Partido> getPartidos() {
+	protected Map<String, Partido> getPartidos() {
 		return partidos;
 	}
 
-	protected void setPartidos(Map<Partido, Partido> partidos) {
+	protected void setPartidos(Map<String, Partido> partidos) {
 		this.partidos = partidos;
 	}
 
@@ -41,6 +41,11 @@ public class Torneo {
 	public Integer getCantidadDeMiembrosEnTorneo() {
 		// TODO Auto-generated method stub
 		return this.miembros.size();
+	}
+
+	public void crearPartido(String local, String visitante) {
+		Partido partido = new Partido(local, visitante);
+		
 	}
 
 }

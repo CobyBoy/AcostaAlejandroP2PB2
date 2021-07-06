@@ -23,8 +23,15 @@ public class Testing {
 	}
 	
 	@Test
-	public void queSePuedaCrearDirector() {
+	public void queSePuedaRegistrarUnPartido() {
+		Jugador juga = new Jugador(444, 4, Posicion.DEF, "gonzalo MONTIEL", "Argentina");
+		Jugador juga2 = new Jugador(445, 5, Posicion.DEF, "Guillermo Maripán", "Chile");
 		DirectorTecnico dire = new DirectorTecnico(4, "scalonie", "argentina");
+		
+		Torneo nuevo = new Torneo();
+		nuevo.crearPartido("Argentina", "Chile");
+		
+		nuevo.registrarPartido(partido, jugadores);
 	}
 
 }
