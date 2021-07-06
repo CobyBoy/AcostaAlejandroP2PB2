@@ -1,5 +1,8 @@
 package ar.edu.unlam;
 
+import ar.edu.unlam.enums.Posicion;
+import ar.edu.unlam.enums.TipoDeMiembro;
+
 public class Jugador extends Miembro {
 private Integer numeroDeCamiseta;
 	
@@ -12,6 +15,12 @@ private Integer numeroDeCamiseta;
 	@Override
 	public String getTipo() {
 		return TipoDeMiembro.JUGADOR.getTipo();
+	}
+
+
+	@Override
+	public int compareTo(Miembro o) {
+		return this.getDni().compareTo(o.getDni());
 	}
 
 }
