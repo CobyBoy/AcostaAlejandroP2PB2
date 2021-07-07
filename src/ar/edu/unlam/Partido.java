@@ -5,15 +5,18 @@ import java.util.Set;
 
 public class Partido {
 	private Integer id;
+	private String nombrePartido;
 	private String nombreEquipoLocal;
 	private String nombreEquipoVisitante;
 
 private Set<Jugador> jugadores;
 	
-	public Partido(String nombreEquipoLocal, String nombreEquipoVisitante) {
+	public Partido(Integer id,String nombreDePArtido, String nombreEquipoLocal, String nombreEquipoVisitante) {
 		this.nombreEquipoLocal = nombreEquipoLocal;
 		this.nombreEquipoVisitante = nombreEquipoVisitante;
+		this.nombrePartido = nombreDePArtido;
 		this.jugadores = new HashSet<Jugador>();
+		this.id = id;
 	}
 
 	protected Integer getId() {
@@ -26,6 +29,12 @@ private Set<Jugador> jugadores;
 
 	protected String getNombreEquipoLocal() {
 		return nombreEquipoLocal;
+	}
+
+	@Override
+	public String toString() {
+		return "Partido [id=" + id + ", nombrePartido=" + nombrePartido + ", nombreEquipoLocal=" + nombreEquipoLocal
+				+ ", nombreEquipoVisitante=" + nombreEquipoVisitante + ", jugadores=" + jugadores + "]";
 	}
 
 	protected void setNombreEquipoLocal(String nombreEquipoLocal) {
@@ -46,6 +55,19 @@ private Set<Jugador> jugadores;
 
 	protected void setJugadores(Set<Jugador> jugadores) {
 		this.jugadores = jugadores;
+	}
+
+	public void agregarJugadoresAPartido(Jugador juga) {
+		this.jugadores.add(juga);
+		
+	}
+
+	protected String getNombrePartido() {
+		return nombrePartido;
+	}
+
+	protected void setNombrePartido(String nombrePartido) {
+		this.nombrePartido = nombrePartido;
 	}
 
 }

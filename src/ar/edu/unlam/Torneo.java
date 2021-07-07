@@ -2,6 +2,7 @@ package ar.edu.unlam;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -43,9 +44,13 @@ public class Torneo {
 		return this.miembros.size();
 	}
 
-	public void crearPartido(String local, String visitante) {
-		Partido partido = new Partido(local, visitante);
-		
+	@Override
+	public String toString() {
+		return "Torneo [miembros=" + miembros + ", partidos=" + partidos + "]";
+	}
+
+	public void registrarPartido(Partido partido) {
+		this.partidos.put(partido.getNombrePartido(), partido);
 	}
 
 }
